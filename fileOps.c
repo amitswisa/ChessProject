@@ -166,11 +166,11 @@ bool checkValidKnightPath(chessPosList* pathList, bool* isCover) {
 			}
 		}
 
-		if (!isCurrentMoveValid)
-			return false;
+if (!isCurrentMoveValid)
+return false;
 
-		prev = curr;
-		curr = curr->next;
+prev = curr;
+curr = curr->next;
 	}
 
 	if (coverAllBoardCounter == BOARD_SIZE * BOARD_SIZE)
@@ -264,3 +264,17 @@ chessPos* getPositionFromByte(BYTE binPos) {
 	return position;
 }
 
+bool isFileEmpty(FILE* fp) {
+	
+	fseek(fp, 0, SEEK_END);
+	long int size = ftell(fp);
+
+	if (size == 0) {
+		printf("%sWarning: given file is empty from content.%s", ANSI_COLOR_YELLOW, ANSI_COLOR_RESET);
+		return true;
+	}
+
+	rewind(fp);
+
+	return false;
+}

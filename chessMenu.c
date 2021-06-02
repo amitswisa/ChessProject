@@ -153,6 +153,10 @@ void menuOptionFive() {
 
 	char* fileName = getFileNameFromUser();
 
+	if (isFileEmpty(fileName)) {
+
+	}
+
 	printf("\n");
 	int res = checkAndDisplayPathFromFile(fileName);
 

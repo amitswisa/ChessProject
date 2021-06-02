@@ -14,5 +14,6 @@ chessPosList* getPathFromFile(FILE* pathFile);
 chessPos* getPositionFromByte(BYTE binPos);
 void insertNodeToList(chessPos* pos, chessPosList* lst);
 bool checkValidKnightPath(chessPosList* pathList, bool* isCover);
+bool isFileEmpty(FILE* fp);
 
 #endif
